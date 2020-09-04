@@ -17,16 +17,15 @@ public class UserController {
 
     @PostMapping("/api/1.0/users")
     GenericResponse createUser(@Valid @RequestBody User user, BindingResult bindingResult) {
-        if      (user.getUsername() == null ||
-                user.getDisplayName() == null ||
-                user.getPassword() == null ||
-                user.getUsername().length() <= 3 ||
-                user.getDisplayName().length() <= 3 ||
-                user.getPassword().length() <= 8)
-        {
-            throw new UserNotValidException();
-        }
-
+//        if      (user.getUsername() == null ||
+//                user.getDisplayName() == null ||
+//                user.getPassword() == null ||
+//                user.getUsername().length() <= 3 ||
+//                user.getDisplayName().length() <= 3 ||
+//                user.getPassword().length() <= 8)
+//        {
+//            throw new UserNotValidException();
+//        }
         if (bindingResult.hasErrors()) {
             throw new UserNotValidException();
         }
